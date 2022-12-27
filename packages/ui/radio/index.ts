@@ -1,2 +1,2 @@
-export type { InputProps } from './Input';
-export { Input } from './Input';
+export type { RadioProps } from './Radio';
+export { Radio } from './Radio';
