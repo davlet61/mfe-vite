@@ -1,4 +1,3 @@
-import crypto from 'crypto';
 import { ComponentProps, forwardRef } from 'react';
 
 import { FieldError } from '../form';
@@ -25,7 +24,9 @@ export const Select = forwardRef<HTMLInputElement, SelectProps>(function Select(
         {...props}
       >
         {options.map(({ value }) => (
-          <option key={crypto.randomUUID()} value={value}></option>
+          <option key={Math.random().toString(36).slice(2, 7)} value={value}>
+            {value}
+          </option>
         ))}
       </select>
 
