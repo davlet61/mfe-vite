@@ -24,6 +24,6 @@ const buttonStyles = cva(
 
 export interface ButtonProps extends ButtonOrLinkProps, VariantProps<typeof buttonStyles> {}
 
-export const Button = ({ intent, fullWidth, ...props }: ButtonProps) => {
-  return <ButtonOrLink className={buttonStyles({ intent, fullWidth })} {...props} />;
-};
+export const Button = ({ intent, fullWidth, ...props }: ButtonProps) => (
+  <ButtonOrLink className={buttonStyles({ intent, fullWidth })} {...props} />
+);

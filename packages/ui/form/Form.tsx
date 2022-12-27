@@ -31,11 +31,15 @@ export const FieldError = ({ name }: FieldErrorProps) => {
     formState: { errors },
   } = useFormContext();
 
-  if (!name) return null;
+  if (!name) {
+    return null;
+  }
 
   const error = errors[name];
 
-  if (!error) return null;
+  if (!error) {
+    return null;
+  }
 
   return <div className="text-sm font-bold text-red-500">{error.message}</div>;
 };
@@ -45,14 +49,12 @@ interface Props<T extends FieldValues = any> extends Omit<ComponentProps<'form'>
   onSubmit: SubmitHandler<T>;
 }
 
-export const Form = <T extends FieldValues>({ form, onSubmit, children, ...props }: Props<T>) => {
-  return (
-    <FormProvider {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} {...props}>
-        <fieldset className="flex flex-col space-y-4" disabled={form.formState.isSubmitting}>
-          {children}
-        </fieldset>
-      </form>
-    </FormProvider>
-  );
-};
+export const Form = <T extends FieldValues>({ form, onSubmit, children, ...props }: Props<T>) => (
+  <FormProvider {...form}>
+    <form onSubmit={form.handleSubmit(onSubmit)} {...props}>
+      <fieldset className="flex flex-col space-y-4" disabled={form.formState.isSubmitting}>
+        {children}
+      </fieldset>
+    </form>
+  </FormProvider>
+);

@@ -4,6 +4,7 @@ import { Button, ButtonProps } from './Button';
 
 export const Submit = ({ children, ...props }: ButtonProps) => {
   const { formState } = useFormContext();
+
   return (
     <Button type="submit" disabled={formState.isSubmitting} {...props}>
       {formState.isSubmitting && (
