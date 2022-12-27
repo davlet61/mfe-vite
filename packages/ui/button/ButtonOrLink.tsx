@@ -9,7 +9,7 @@ export const ButtonOrLink = ({ href, ...props }: ButtonOrLinkProps) => {
   const content = <LinkOrButton {...props} />;
 
   if (isLink) {
-    return <a>{content}</a>;
+    return <div>{content}</div>;
   }
 
   return content;
