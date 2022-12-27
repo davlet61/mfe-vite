@@ -5,10 +5,12 @@ export interface Movie {
   image: string;
 }
 
-export const useStore = create<{
+export interface StoreProps {
   movies: Array<Movie>;
   addMovie: (movie: Movie) => void;
-}>((set) => ({
+}
+
+export const useStore = create<StoreProps>((set) => ({
   movies: [],
   addMovie: (movie) => set((state) => ({ movies: [...state.movies, movie] })),
 }));
