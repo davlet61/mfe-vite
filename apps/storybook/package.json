@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "BROWSER=none start-storybook -p 6006",
+    "dev": "start-storybook --no-open -p 6006",
     "build": "build-storybook"
   },
   "dependencies": {

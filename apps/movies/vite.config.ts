@@ -1,3 +1,4 @@
+import federation from '@originjs/vite-plugin-federation';
 import react from '@vitejs/plugin-react-swc';
 import { defineConfig } from 'vite';
 
@@ -6,5 +7,19 @@ export default defineConfig({
   server: {
     port: 3000,
   },
-  plugins: [react()],
+  plugins: [
+    federation({
+      name: 'host',
+      filename: 'remoteEntry.js',
+      remotes: {
+        skeleton: 'http://localhost:3001/assets/remoteEntry.js',
+      },
+      shared: ['react', 'react-dom'],
+      mode: 'development',
+    }),
+    react(),
+  ],
+  build: {
+    minify: true,
+  },
 });

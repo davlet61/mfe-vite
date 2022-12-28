@@ -22,27 +22,27 @@ export const useZodForm = <T extends ZodSchema<any>>({ schema, ...formConfig }: 
   });
 };
 
-interface FieldErrorProps {
-  name?: string;
-}
+// export interface FieldErrorProps {
+//   name?: string;
+// }
 
-export const FieldError = ({ name }: FieldErrorProps) => {
-  const {
-    formState: { errors },
-  } = useFormContext();
+// export const FieldError = ({ name }: FieldErrorProps) => {
+//   const {
+//     formState: { errors },
+//   } = useFormContext();
 
-  if (!name) {
-    return null;
-  }
+//   if (!name) {
+//     return null;
+//   }
 
-  const error = errors[name];
+//   const error = errors[name];
 
-  if (!error) {
-    return null;
-  }
+//   if (!error) {
+//     return null;
+//   }
 
-  return <div className="text-sm font-bold text-red-500">{error.message}</div>;
-};
+//   return <div className="text-sm font-bold text-red-500">{error.message}</div>;
+// };
 
 interface Props<T extends FieldValues = any> extends Omit<ComponentProps<'form'>, 'onSubmit'> {
   form: UseFormReturn<T>;

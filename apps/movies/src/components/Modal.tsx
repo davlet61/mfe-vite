@@ -16,7 +16,7 @@ export const Modal = () => {
     <div>
       <Popup show={visibility} toggleShow={toggleVisibility} title="Add a new note">
         <Form form={form} onSubmit={({ text }) => window.alert('create')}>
-          <Input label="Name" {...form.register('text')} />
+          <Input label="Name" placeholder="Name" {...form.register('text')} />
           <Select label="Genre" selectedOpt={selectedOpt} setSelected={setSelected} options={opts} />
           <Submit>Create Note</Submit>
           <Button

@@ -1,7 +1,5 @@
 import { ComponentProps, forwardRef } from 'react';
 
-import { FieldError } from '../form';
-
 export interface InputProps extends ComponentProps<'input'> {
   label: string;
 }
@@ -17,7 +15,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input({ l
         {...props}
       />
 
-      <FieldError name={props.name} />
+      {/* <FieldError name={props.name} /> */}
     </label>
   );
 });
