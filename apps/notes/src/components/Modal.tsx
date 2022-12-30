@@ -10,7 +10,7 @@ export const Modal = () => {
   const form = useZodForm({ schema: newNoteSchema });
   const { visibility, toggleVisibility } = useVisibility((state) => state);
   const { selectedOpt, setSelected } = useSelected((state) => state);
-  const opts = [{ value: 'Thriller' }, { value: 'Comedy' }];
+  const opts = [{ value: 'Personal' }, { value: 'Work' }];
 
   return (
     <div>

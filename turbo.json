@@ -11,6 +11,9 @@
     "dev": {
       "cache": false
     },
-    "start": {}
+    "start": {},
+    "dev:standalone": {
+      "cache": false
+    }
   }
 }

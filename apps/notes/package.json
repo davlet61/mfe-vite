@@ -1,17 +1,17 @@
 {
-  "name": "movies",
+  "name": "notes",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite build --watch & pnpm start",
-    "dev:standalone": "vite",
+    "dev:standalone": "vite build --watch & pnpm start",
+    "dev": "vite",
     "build": "tsc && vite build",
     "start": "vite preview --port 3000"
   },
   "dependencies": {
-    "lib": "workspace:*",
     "react": "^18.2.0",
+    "lib": "workspace:*",
     "react-dom": "^18.2.0",
     "ui": "workspace:*",
     "zod": "^3.20.2"
